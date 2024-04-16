@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rsq44hsv33e8"]
+
+[ext_resource type="Script" path="res://Circle.cs" id="1_qt5mq"]
+
+[node name="TestCircle" type="Node2D"]
+script = ExtResource("1_qt5mq")
