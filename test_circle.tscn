@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://rsq44hsv33e8"]
+[gd_scene load_steps=3 format=3 uid="uid://rsq44hsv33e8"]
 
 [ext_resource type="Script" path="res://Circle.cs" id="1_qt5mq"]
 
+[sub_resource type="GDScript" id="GDScript_7cqve"]
+script/source = "extends Camera2D
+
+@export var speed: int = 20
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var axis = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	offset += axis * delta * speed
+"
+
 [node name="TestCircle" type="Node2D"]
 script = ExtResource("1_qt5mq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(100, 100)
+script = SubResource("GDScript_7cqve")
+speed = 30

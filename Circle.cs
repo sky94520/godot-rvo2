@@ -10,7 +10,7 @@ public partial class Circle : Node2D
 	public override void _Ready()
 	{
 		nav_system = GetNode<NavigationSystem>("/root/NavigationSystem");
-		nav_system.SetAgentDefaults(15f, 10, 10f, 10f, 1.5f, 10, Vector2.Zero);
+		nav_system.SetAgentDefaults(15f, 10, 10f, 10f, 1.5f, 20, Vector2.Zero);
 
 		for (int i = 0; i < 250; ++i) {
 			Vector2 pos = new Vector2(Mathf.Cos(i*2f*Mathf.Pi/250f) * 100 + 192, Mathf.Sin(i*2f*Mathf.Pi/250f) * 100 + 108);
